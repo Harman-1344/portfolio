@@ -1,0 +1,44 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --bg: 10 10 15;
+    --text: 244 244 245;
+  }
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px;
+  }
+  body {
+    @apply bg-bg text-text-primary font-body antialiased;
+    background-image:
+      radial-gradient(ellipse 80% 50% at 50% -10%, rgba(168, 85, 247, 0.12), transparent),
+      radial-gradient(ellipse 60% 40% at 90% 50%, rgba(34, 211, 238, 0.08), transparent);
+    background-attachment: fixed;
+  }
+  ::selection {
+    @apply bg-accent-purple/40 text-text-primary;
+  }
+}
+
+@layer components {
+  .gradient-text {
+    @apply bg-gradient-primary bg-clip-text text-transparent;
+  }
+  .glass {
+    @apply bg-bg-card/60 backdrop-blur-md border border-border;
+  }
+  .section {
+    @apply relative py-24 px-6 md:py-32;
+  }
+  .container-narrow {
+    @apply max-w-6xl mx-auto;
+  }
+}
+
+@layer utilities {
+  .scrollbar-hide::-webkit-scrollbar { display: none; }
+  .scrollbar-hide { scrollbar-width: none; }
+}
